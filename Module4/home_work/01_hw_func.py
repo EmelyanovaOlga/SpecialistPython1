@@ -1,13 +1,11 @@
-# Дан шестизначный номер билета. Определить, является ли билет счастливым.
-# Решение реализовать в виде функции.
-# Билет считается счастливым, если сумма его первых и последних цифр равны.
+def find_ticket(ticket):
+    num = str(ticket)
+    lst1 = int(num[:1]) + int(num[1:2])
+    lst2 = int(num[-1]) + int(num[-2])
+    if lst1 == lst2:
+        return True
+    else:
+        return False
 
-def lucky_ticket(ticket_number):
-    # TODO: your code here
-    pass
-
-
-# Тестируем функцию
-print(lucky_ticket(123006))
-print(lucky_ticket(12321))
-print(lucky_ticket(436751))
+ticket = int(input("введите номер билета:"))
+print("повезло?", find_ticket(ticket))
